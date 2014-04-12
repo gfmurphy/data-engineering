@@ -18,7 +18,11 @@ group :development, :test do
   gem "rspec-rails", "~> 2.14.2"
 end
 
-gem "shoulda-matchers", "~> 2.5.0", group: :test
+group :test do
+  gem "shoulda-matchers", "~> 2.5.0"
+  gem "capybara", "~> 2.2.1"
+  gem "launchy", "~> 2.4.2"
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
