@@ -1,0 +1,4 @@
+<%= content_tag_for :li, purchase_file do |file| %>
+  <div class="filename"><%= file.filename %></div>
+  <div class="created-at"><%= file.created_at.to_s(:long) %></div>
+<% end %>
