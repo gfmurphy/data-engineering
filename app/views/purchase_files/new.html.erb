@@ -1,0 +1,14 @@
+<h1>Upload New Purchase File</h1>
+<%= simple_form_for @purchase_file do |f| %>
+
+  <%= f.error_notification %>
+  <%= f.full_error(:filename) %>
+
+  <div class="inputs">
+    <%= f.input :data_file, as: :file, label: "Purchase file" %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, "Upload file" %>
+  </div>
+<% end %>
