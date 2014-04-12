@@ -12,8 +12,9 @@ class PurchaseFilesController < ApplicationController
   end
 
   def create
-    @purchase_file = PurchaseFile.create(purchase_file_params)
-    respond_with(@purchase_file)
+    @purchase_file = PurchaseFile.new(purchase_file_params)
+    flash[:notice] = "File uploaded successfully." if @purchase_file.save
+    respond_with(@purchase_file, location: purchase_files_url)
   end
 
   private
