@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140412152736) do
+ActiveRecord::Schema.define(version: 20140412154248) do
 
   create_table "items", force: true do |t|
     t.string   "description"
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 20140412152736) do
 
   add_index "merchants", ["address", "name"], name: "index_merchants_on_address_and_name"
 
+  create_table "purchase_files", force: true do |t|
+    t.string   "filename",                                            null: false
+    t.string   "data_file"
+    t.decimal  "gross_revenue", precision: 8, scale: 2, default: 0.0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "purchasers", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -43,13 +51,15 @@ ActiveRecord::Schema.define(version: 20140412152736) do
     t.integer  "purchaser_id"
     t.integer  "item_id"
     t.integer  "merchant_id"
-    t.integer  "item_count",   default: 0, null: false
+    t.integer  "item_count",       default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "purchase_file_id"
   end
 
   add_index "purchases", ["item_id"], name: "index_purchases_on_item_id"
   add_index "purchases", ["merchant_id"], name: "index_purchases_on_merchant_id"
+  add_index "purchases", ["purchase_file_id"], name: "index_purchases_on_purchase_file_id"
   add_index "purchases", ["purchaser_id"], name: "index_purchases_on_purchaser_id"
 
 end
