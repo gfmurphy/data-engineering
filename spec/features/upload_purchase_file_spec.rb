@@ -19,6 +19,7 @@ feature "Uploading a purchase file" do
       upload_file
       must_see_success_message
       must_see_filename
+      must_see_gross_revenue
     end
   end
 
@@ -38,6 +39,12 @@ feature "Uploading a purchase file" do
   def must_see_filename
     within("#purchase_files") do
       expect(page).to have_content filename
+    end
+  end
+
+  def must_see_gross_revenue
+    within("#purchase_files") do
+      expect(page).to have_content("$95.00")
     end
   end
 

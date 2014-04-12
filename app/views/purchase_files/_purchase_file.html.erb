@@ -1,4 +1,5 @@
 <%= content_tag_for :li, purchase_file do |file| %>
   <div class="filename"><%= file.filename %></div>
+  <div class="gross-revenue"><%= number_to_currency(file.gross_revenue) %></div>
   <div class="created-at"><%= file.created_at.to_s(:long) %></div>
 <% end %>
