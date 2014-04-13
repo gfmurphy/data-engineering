@@ -1,0 +1,10 @@
+<h1>Purchase Files</h1>
+
+<div class="actions">
+  <%= link_to "Add Purchase file", new_purchase_file_path %>
+</div>
+
+<ol id="purchase_files">
+  <%= render(@purchase_files) ||
+      content_tag(:li, "No purchase files have been uploaded.") %>
+</ol>

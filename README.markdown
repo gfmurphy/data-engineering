@@ -1,3 +1,32 @@
+# George F. Murphy's Submission for Software Engineer Challenge #
+
+Thank you very much for taking the time to consider my submission.
+
+## Assumptions made during development.
+
+I made a couple assumptions during the development of the project:
+
+1. Based on the project description I made the assumption that the data will be
+clean entering the system.
+2. I focused on the core problem. There are no data validation routines, error
+handling routines or constraints. These were omitted to save time, and could
+easily be added in the future as the application's requirements became clearer.
+
+## Instructions for Running the Application
+
+This application was developed using **ruby 2.1.1p76**, **bundler 1.6.1**
+and **rails 4.1.0**. To
+execute the application do the following:
+
+1. Install ruby 2.1.1 and rubygems
+2. Install bundler 1.6.1 (gem install bundler)
+3. `cd` into the project directory and type `bundle install`
+4. Bootstrap the application by running `bundle exec rake db:create` and
+`bundle exec rake db:migrate`
+5. Start the webserver: `rails s`
+6. Open a browser and open http://localhost:3000
+7. Specs can be run with `bundle exec rake spec`
+
 # Challenge for Software Engineer - Big Data 
 To better assess a candidates development skills, we would like to provide the following challenge.  You have as much time as you'd like (though we ask that you not spend more than a few hours).
 
